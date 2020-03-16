@@ -16,27 +16,27 @@ int prim(int n)
     return (1);
 }
 
-int funk(int v[])
+int funk(int v[], int len)
 {
     int suma = 0;
     int max = 0;
     int max_temp = 0;
     int i = 0;
-    while (v[i])
+    while (i < len - 1)
     {
-        if (int(v[i + 1]) == v[i + 1])
+        suma = v[i] + v[i + 1];
+        cout << prim(suma);
+        if (prim(suma))
         {
-            suma = v[i] + v[i + 1];
-            if (prim(suma))
-            {
-                max_temp++;
-                if (max_temp > max)
-                    max = max_temp;
-            }
-            else
-                max_temp = 0;
-            i++;
+            max_temp++;
+            if (max_temp > max)
+                max = max_temp;
         }
+        else
+            max_temp = 0;
+        i++;
     }
-    return max;
+    if (max > 0)
+        max++;
+    return (max);
 }

@@ -11,12 +11,12 @@ int main()
     int i = 0;
     int nr;
     cin >> nr;
-    while (nr)
+    while (nr != 0)
     {
         v[i] = nr;
         i++;
         cin >> nr;
     }
-    cout << "Cea mai lunga secventa specificate are lungimea: " << funk(v) + 1;
+    cout << "Cea mai lunga secventa specificate are lungimea: " << funk(v,i);
     return (0);
 }
